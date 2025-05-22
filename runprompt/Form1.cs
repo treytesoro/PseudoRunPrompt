@@ -349,7 +349,7 @@ namespace runprompt
     {
         internal static void Add(string path)
         {
-            const string mruKeyPath = @"Software\Sentara\AdminRunPrompt\MRU";
+            const string mruKeyPath = @"Software\AdminRunPrompt\MRU";
             const int maxItems = 10;
 
             using (RegistryKey mruKey = Registry.CurrentUser.CreateSubKey(mruKeyPath))
@@ -391,7 +391,7 @@ namespace runprompt
         }
         internal static void Clear()
         {
-            const string mruKeyPath = @"Software\Sentara\AdminRunPrompt\MRU";
+            const string mruKeyPath = @"Software\AdminRunPrompt\MRU";
             using (RegistryKey mruKey = Registry.CurrentUser.OpenSubKey(mruKeyPath, writable: true))
             {
                 if (mruKey == null)
@@ -405,7 +405,7 @@ namespace runprompt
         }
         internal static List<string> GetList()
         {
-            const string mruKeyPath = @"Software\Sentara\AdminRunPrompt\MRU";
+            const string mruKeyPath = @"Software\AdminRunPrompt\MRU";
             using (RegistryKey mruKey = Registry.CurrentUser.OpenSubKey(mruKeyPath))
             {
                 if (mruKey == null)
