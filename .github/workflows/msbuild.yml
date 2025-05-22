@@ -51,4 +51,5 @@ jobs:
       run: gh release delete v1.0.0 --cleanup-tag --yes
 
     - name: Release
+      if: always()
       run: gh release create v1.0.0 .\runprompt\bin\Release\runprompt.exe
