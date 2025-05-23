@@ -189,6 +189,7 @@ namespace runprompt
                     }
                     SetForegroundWindow(this.Handle);
                     this.TopMost = false; // Remove topmost status
+                    PositionFormAtBottomLeft();
                 }
             }
         }
@@ -207,7 +208,7 @@ namespace runprompt
             this.Hide();
         }
 
-        private void PositionFormAtBottomLeft()
+        public void PositionFormAtBottomLeft()
         {
             // Get the working area of the primary screen
             // The working area excludes the taskbar and any docked toolbars.
@@ -289,6 +290,8 @@ namespace runprompt
                     }
                     SetForegroundWindow(Form1._instance.Handle);
                     Form1._instance.TopMost = false; // Remove topmost status
+                    Form1._instance.PositionFormAtBottomLeft();
+
                     //MessageBox.Show("Win + R detected!");
                     // Reset state to prevent repeated alerts
                     winKeyDown = false;
